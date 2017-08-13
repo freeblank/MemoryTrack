@@ -18,8 +18,8 @@ public:
     void* operator new(size_t size);
     
 private:
-    int test;
     int *test2;
+    int test;
 };
 
 #endif /* TestNew_h */

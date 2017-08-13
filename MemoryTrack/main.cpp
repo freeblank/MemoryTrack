@@ -11,14 +11,14 @@
 
 
 class ObjectTest {
-private:
+public:
     int i_test1;
     char i_test2;
     char i_test3;
 };
 
 class ObjectTest2 {
-private:
+public:
     char i_test2;
     int i_test1;
     char i_test3;
@@ -38,14 +38,14 @@ int main(int argc, const char * argv[]) {
     MemoryTrack::getInstance()->dump();
     
     ObjectTest2 *i_objectTest4 = new(i_objectTest3) ObjectTest2();
+    i_objectTest4->i_test1 = 1;
     MemoryTrack::getInstance()->dump();
     
     delete i_objectTest2;
-    delete i_objectTest4;
+    delete i_objectTest3;
     MemoryTrack::getInstance()->dump();
     
     TestNew *i_testNew = new TestNew();
-    
     MemoryTrack::getInstance()->dump();
     delete i_testNew;
     MemoryTrack::getInstance()->dump();
